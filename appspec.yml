@@ -1,4 +1,14 @@
 version: 0.0
 OS: Linux
 files: 
-  sourse: 
+  sourse: html.html
+  destination: /var/www/html/
+hooks:
+   beforeinstall:
+       - locations: scripts/install_dependendies
+         timeout: 300
+         runas: root
+       - locations: scripts/start_server
+         timeout: 300
+         runas: root
+  
